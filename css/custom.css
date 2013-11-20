@@ -1,0 +1,68 @@
+
+/* quiddle viewport with fixed height */
+.reveal .quiddle {
+    /*height: 100%;*/
+    height: 700px; 
+    width: 100%;
+}
+
+/* Left side of frame */
+.reveal .quiddle .quiddle-inputs {
+    width: 60%;
+    height: 100%;
+    max-width: 95%;
+    max-height: 95%;
+    display: block;
+    margin-top: 20px;
+    float: left;
+}
+
+.reveal iframe.quiddle-preview {
+    margin-top:20px;
+    height: 100%;
+    border:2px solid white !important;
+}
+.reveal .quiddle-input {
+    /*width: 100%;
+    display: block;
+    margin-top: 20px;
+    min-height: 200px;
+    height: 40%;*/
+    text-align:left !important;*/
+    font: 15px 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace !important;
+    font-size: 16px;
+}
+/* Right side of frame */
+.reveal .quiddle .quiddle-outputs {
+    width: 35%;
+    height: 60%;
+    display: inline;
+}
+
+/* Collage */
+.reveal .collage {
+    width: 900px;
+    border: none;
+}
+
+/* Logos as Headers */
+.reveal h1 img, 
+.reveal h2 img {
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+/* Small images in text flow */
+.reveal p img {
+    width: 100px;
+    vertical-align: middle;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+/* two images of same height */
+.reveal .comparison img {
+    height: 300px;
+}

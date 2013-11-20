@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Client-Side-MV* - Ein Ueberblick - Slides</title>
+        <meta name="description" content="Ein Ueberblick ueber moderne Client-Side-MV* Frameworks">
+        <meta name="author" content="Benedikt Lang">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <script src="js/ace-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write('<link rel="stylesheet" href="css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
+        </script>
+        <!-- Interactive Quiddles - github.com/blang/quiddle.js -->
+        <link rel="stylesheet" href="css/custom.css">
+        <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Client-Side-MV*</h1>
+                    <h3>Ein Ueberblick</h3>
+                    <p>
+                        <small>Von Benedikt Lang / <a href="http://twitter.com/benediktlang">@benediktlang</a>
+                        </small>
+                    </p>
+                </section>
+                <section>
+                    <h2>Client-Side-MV*</h2>
+                    <p>
+                        MVC, MVP, MVVM, MVWTF? im Browser
+                    </p>
+                    <p>
+                        Logische Konsequenz aus der Entwicklung von XHR, HTML5, schnelleren JS Compilern und der Popularitaet von JS
+                    </p>
+                </section>
+                <section>
+                    <h2>Konsequenz</h2>
+                    <p>
+                        Thick Client, Server MVC wird zur REST Api, Skaliert besser (CDN, XHR), User Experience++
+                    </p>
+                    <p>
+                        Auch Nachteile, abhaengig von der Anwendung
+                    </p>
+                </section>
+                <section>
+                    <h2>Choose your Weapon</h2>
+                    <img src="img/collage.png" class="collage" alt="MV* Frameworks" />
+                </section>
+                <section>
+                    <section>
+                        <h2>
+                            <img src="img/angularjs.png" alt="Angular.js" />
+                        </h2>
+                        <p>
+                            2009 | Google | OpenSource
+                            <img src="img/github.png" alt="Github" />
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            "Angular is what HTML would have been had it been designed for applications." - Angular.js Entwickler [<a href="http://docs.angularjs.org/guide/introduction">...</a>]
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Vielversprechend! Aber wie?</h2>
+                        <ul>
+                            <li>Erweiterte Templates: Databinding</li>
+                            <li>HTML Erweiterungen: Directives</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Databinding: Two-Way</h2>
+                        <div class="comparison">
+                            <img src="img/binding_oneway.png" alt="Oneway Binding" />
+                            <img src="img/binding_twoway.png" alt="Twoway Binding" />
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Databinding in der Praxis</h2>
+                        <div class="quiddle quiddle-angularjs">
+                            <div>
+                                <button class="quiddle-run">Run</button>
+                                <button class="quiddle-reset">Reset</button>
+                            </div>
+                            <div class="quiddle-inputs">
+                                <div class="quiddle-input" data-quiddle-file="quiddles/databinding.html" data-quiddle-marker="body" data-quiddle-type="html" style="height: 50%"></div>
+                                <div class="quiddle-input" data-quiddle-file="quiddles/databinding.js" data-quiddle-marker="script" data-quiddle-type="javascript" style="height: 50%"></div>
+                            </div>
+                            <div class="quiddle-outputs">
+                                <iframe class="quiddle-preview"></iframe>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>HTML Erweiterungen: Directives</h2>
+                        <p>
+                            Oberflaechlich: Eigene HTML Tags und Attribute
+                            <br />Im Hintergrund: Marker auf einem DOM Element, die Angulars HTML Compiler dann mit Logik versieht
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Integrierte (ng-)Directives</h2>
+                        <p>
+                            Angular bringt eine Vielzahl von Directives mit (ng- Prefix)
+                        </p>
+                        <ul>
+                            <li>ng-repeat: Praktisches Foreach</li>
+                            <li>ng-click/ng-submit: Button onClick</li>
+                            <li>ng-src: Dynamische Bilder</li>
+                            <li>ng-if: Bedingungen</li>
+                            <li>Bereits gesehen: ng-app, ng-controller</li>
+                            <li>Viele Weitere...</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Directives in der Praxis</h2>
+                        <div class="quiddle quiddle-angularjs">
+                            <div>
+                                <button class="quiddle-run">Run</button>
+                                <button class="quiddle-reset">Reset</button>
+                            </div>
+                            <div class="quiddle-inputs">
+                                <div class="quiddle-input" data-quiddle-file="quiddles/ngdirectives.html" data-quiddle-marker="body" data-quiddle-type="html" style="height: 55%"></div>
+                                <div class="quiddle-input" data-quiddle-file="quiddles/ngdirectives.js" data-quiddle-marker="script" data-quiddle-type="javascript" style="height: 45%"></div>
+                            </div>
+                            <div class="quiddle-outputs">
+                                <iframe class="quiddle-preview"></iframe>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Eigene Directives</h2>
+                        <p>Attribute und Tags mit verschiedenen Scope Einstellungen</p>
+                    </section>
+                    <section>
+                        <h2>Directives in der Praxis</h2>
+                        <div class="quiddle quiddle-angularjs">
+                            <div>
+                                <button class="quiddle-run">Run</button>
+                                <button class="quiddle-reset">Reset</button>
+                            </div>
+                            <div class="quiddle-inputs">
+                                <div class="quiddle-input" data-quiddle-file="quiddles/mydirectives.html" data-quiddle-marker="body" data-quiddle-type="html" style="height: 30%"></div>
+                                <div class="quiddle-input" data-quiddle-file="quiddles/mydirectives.js" data-quiddle-marker="script" data-quiddle-type="javascript" style="height: 70%"></div>
+                            </div>
+                            <div class="quiddle-outputs">
+                                <iframe class="quiddle-preview"></iframe>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Kann Angular noch mehr?</h2>
+                        <ul>
+                            <li>Dependency Injection</li>
+                            <li>ngResource: Anbindung an RESTful APIs</li>
+                            <li>DeepLinking/Routing</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2><img src="img/backbone.png" alt="Backbone.js" /></h2>
+                        <p>
+                            2009 | Jeremy Ashkenas | OpenSource
+                            <img src="img/github.png" alt="Github" />
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Baukasten mit allen wichtigen Modulen, freie Umsetzung
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Modul: Events</h2>
+                        <p>Kann jedem beliebigen Object die Moeglichkeit auf Events zu reagieren und auszuloesen
+                        </p>
+                        <pre><code data-trim contenteditable>
+var object = {};
+_.extend(object, Backbone.Events);
+object.on("alert", function(msg) {
+  alert("Triggered " + msg);
+});
+object.trigger("alert", "an event");
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Modul: Models</h2>
+                        <p>
+                            Boilerplate fuer Models. Bietet Eventssupport, getter/setter, Validierung, XHR Schnittstelle
+                        </p>
+                        <pre><code data-trim contenteditable>
+var Meal = Backbone.Model.extend({
+  defaults: {
+    "appetizer":  "caesar salad",
+    "entree":     "ravioli",
+    "dessert":    "cheesecake"
+  }
+});
+var dinner = new Meal();
+dinner.on("change:entree", function(...){...});
+dinner.set("entree", "maccaroni");
+alert("Dessert will be " + dinner.get('dessert'));
+</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <h1>Entscheidungen!</h1>
+                    <h2>Client-Side-MV* Ja/Nein?</h2>
+                    <p>Je nach Anwendungsfall</p>
+                    <h2>Welches Framework?</h2>
+                    <p>Im Prinzip Geschmackssache, IMHO Angular fuer kleine Projekte, Bootstrap fuer groessere</p>
+                </section>
+                <section>
+                    <h1>How?</h1>
+                    <h3>Slides mit HTML/JS: <a href="https://github.com/hakimel/reveal.js/">github.com/hakimel/reveal.js</a>
+                    </h3>
+                    <h3>JS Fiddle fuer Slides: <a href="https://github.com/blang/quiddle.js/">github.com/blang/quiddle.js</a>
+                    </h3>
+                    <h1>Who?</h1>
+                    <h3>Benedikt Lang / @benediktlang</h3>
+                    <h1>THE END</h1>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.quiddle.min.js"></script>
+        <script>
+            $(function() {
+                var angularConfig = {
+                    template: 'quiddles/angular.html',
+                    emptyfile: 'quiddles/empty.html',
+                    aceconfig: {
+                        theme: 'ace/theme/monokai',
+                        initMethod: function(editor, elem) {
+                            editor.renderer.setShowGutter(false);
+                        }
+                    }
+                };
+                $('.quiddle-angularjs').quiddle(angularConfig);
+            });
+        </script>
+        <script src="js/reveal.min.js"></script>
+        <script>
+            // Full list of configuration options available here:
+             // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                // Optional libraries used to extend on reveal.js
+                dependencies: [{
+                    src: 'lib/js/classList.js',
+                    condition: function() {
+                        return !document.body.classList;
+                    }
+                }, {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }]
+            });
+        </script>
+    </body>
+</html>

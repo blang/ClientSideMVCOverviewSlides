@@ -1,0 +1,16 @@
+<div ng-app="proseminar" 
+    ng-controller="NgDirectivesCtrl">
+    <h2>Meine Todos: </h2>
+    <ul ng-repeat="item in todos">
+        <li>{{item.text}}</li>
+    </ul>
+    <span ng-if="todos.length === 0">
+        <button ng-click="weghier()">Weg hier</button>
+    </span>
+    <span ng-if="todos.length > 0">
+        <button ng-click="aufschieben()">
+            Reicht fuer heute</button><br />
+    </span>
+    <img ng-src="{{successimg}}"
+    style="width: 220px"/>
+</div>
