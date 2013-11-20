@@ -170,7 +170,9 @@
                 </section>
                 <section>
                     <section>
-                    <h2><img src="img/backbone.png" alt="Backbone.js" /></h2>
+                        <h2>
+                            <img src="img/backbone.png" alt="Backbone.js" />
+                        </h2>
                         <p>
                             2009 | Jeremy Ashkenas | OpenSource
                             <img src="img/github.png" alt="Github" />
@@ -231,6 +233,38 @@ alert("Dessert will be " + dinner.get('dessert'));
                     <h3>Benedikt Lang / @benediktlang</h3>
                     <h1>THE END</h1>
                 </section>
+                <section>
+                    <h2>Angular.js Playground</h2>
+                    <div class="quiddle quiddle-angularjs">
+                        <div>
+                            <button class="quiddle-run">Run</button>
+                            <button class="quiddle-reset">Reset</button>
+                        </div>
+                        <div class="quiddle-inputs">
+                            <div class="quiddle-input" data-quiddle-file="quiddles/angularplayground.html" data-quiddle-marker="body" data-quiddle-type="html" style="height: 50%"></div>
+                            <div class="quiddle-input" data-quiddle-file="quiddles/angularplayground.js" data-quiddle-marker="script" data-quiddle-type="javascript" style="height: 50%"></div>
+                        </div>
+                        <div class="quiddle-outputs">
+                            <iframe class="quiddle-preview"></iframe>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Backbone.js Playground</h2>
+                    <div class="quiddle quiddle-backbonejs">
+                        <div>
+                            <button class="quiddle-run">Run</button>
+                            <button class="quiddle-reset">Reset</button>
+                        </div>
+                        <div class="quiddle-inputs">
+                            <div class="quiddle-input" data-quiddle-file="quiddles/backboneplayground.html" data-quiddle-marker="body" data-quiddle-type="html" style="height: 20%"></div>
+                            <div class="quiddle-input" data-quiddle-file="quiddles/backboneplayground.js" data-quiddle-marker="script" data-quiddle-type="javascript" style="height: 80%"></div>
+                        </div>
+                        <div class="quiddle-outputs">
+                            <iframe class="quiddle-preview"></iframe>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
         <script src="lib/js/head.min.js"></script>
@@ -238,17 +272,25 @@ alert("Dessert will be " + dinner.get('dessert'));
         <script src="js/jquery.quiddle.min.js"></script>
         <script>
             $(function() {
-                var angularConfig = {
-                    template: 'quiddles/angular.html',
-                    emptyfile: 'quiddles/empty.html',
-                    aceconfig: {
-                        theme: 'ace/theme/monokai',
-                        initMethod: function(editor, elem) {
-                            editor.renderer.setShowGutter(false);
+                var basicConfig = function() {
+                    return {
+                        emptyfile: 'quiddles/empty.html',
+                        aceconfig: {
+                            theme: 'ace/theme/monokai',
+                            initMethod: function(editor, elem) {
+                                editor.renderer.setShowGutter(false);
+                            }
                         }
                     }
                 };
+                var angularConfig = $.extend(true, {}, basicConfig(), {
+                    template: 'quiddles/angular.html'
+                });
+                var backboneConfig = $.extend(true, {}, basicConfig(), {
+                    template: 'quiddles/backbone.html'
+                });
                 $('.quiddle-angularjs').quiddle(angularConfig);
+                $('.quiddle-backbonejs').quiddle(backboneConfig);
             });
         </script>
         <script src="js/reveal.min.js"></script>
