@@ -7,6 +7,8 @@ Language: German
 
 Usage
 ---------
+Checkout slides online at [Github Pages](http://blang.github.io/ClientSideMVCOverviewSlides/)
+
 Slides only work served by a proper webserver (no file:// proto). To start a simple webserver using node:
 
     npm install
