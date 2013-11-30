@@ -44,6 +44,10 @@
     width: 900px;
     border: none;
 }
+.reveal .fullsize {
+    height: 100%;
+    border: none;
+}
 
 /* Logos as Headers */
 .reveal h1 img, 
