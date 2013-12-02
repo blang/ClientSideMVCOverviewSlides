@@ -52,7 +52,6 @@ grunt.initConfig({
 //Load Tasks
 grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-html');
-grunt.loadNpmTasks('grunt-html-prettyprinter');
 grunt.loadNpmTasks('grunt-prettify');
 
 // Default task
