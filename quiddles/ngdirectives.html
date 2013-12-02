@@ -1,8 +1,8 @@
 <div ng-app="proseminar" 
     ng-controller="NgDirectivesCtrl">
     <h2>Meine Todos: </h2>
-    <ul ng-repeat="item in todos">
-        <li>{{item.text}}</li>
+    <ul>
+        <li ng-repeat="item in todos">{{item.text}}</li>
     </ul>
     <span ng-if="todos.length === 0">
         <button ng-click="weghier()">Weg hier</button>
