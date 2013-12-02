@@ -2,14 +2,13 @@
     ng-controller="NgDirectivesCtrl">
     <h2>Meine Todos: </h2>
     <ul>
-        <li ng-repeat="item in todos">{{item.text}}</li>
+      <li ng-repeat="todo in todolist">
+        <input type="checkbox" ng-model="todo.done">
+        <span class="done-{{todo.done}}">{{todo.text}}</span>
+      </li>
     </ul>
-    <span ng-if="todos.length === 0">
+    <span ng-if="remaining().length === 0">
         <button ng-click="weghier()">Weg hier</button>
-    </span>
-    <span ng-if="todos.length > 0">
-        <button ng-click="aufschieben()">
-            Reicht fuer heute</button><br />
     </span>
     <img ng-src="{{successimg}}"
     style="width: 220px"/>
