@@ -8,6 +8,6 @@
     "grunt": "~0.4.1",
     "grunt-contrib-connect": "~0.5.0",
     "grunt-html": "~0.3.4",
-    "grunt-prettify": "~0.2.9"
+    "grunt-prettify": "~0.3.3"
   }
 }
