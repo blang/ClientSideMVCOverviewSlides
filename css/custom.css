@@ -66,6 +66,14 @@
     box-shadow: none;
 }
 
+.reveal section img {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow:none;
+}
+
 /* two images of same height */
 .reveal .comparison img {
     height: 300px;
