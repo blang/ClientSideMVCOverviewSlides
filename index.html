@@ -172,54 +172,6 @@
                     </section>
                 </section>
                 <section>
-                    <section>
-                        <h2>
-                            <img src="img/backbone.png" alt="Backbone.js" />
-                        </h2>
-                        <p>
-                            2009 | Jeremy Ashkenas | OpenSource
-                            <img src="img/github.png" alt="Github" />
-                        </p>
-                    </section>
-                    <section>
-                        <p>
-                            Baukasten mit allen wichtigen Modulen, freie Umsetzung
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Modul: Events</h2>
-                        <p>Kann jedem beliebigen Object die Moeglichkeit auf Events zu reagieren und auszuloesen
-                        </p>
-                        <pre><code data-trim contenteditable>
-var object = {};
-_.extend(object, Backbone.Events);
-object.on("alert", function(msg) {
-  alert("Triggered " + msg);
-});
-object.trigger("alert", "an event");
-</code></pre>
-                    </section>
-                    <section>
-                        <h2>Modul: Models</h2>
-                        <p>
-                            Boilerplate fuer Models. Bietet Eventssupport, getter/setter, Validierung, XHR Schnittstelle
-                        </p>
-                        <pre><code data-trim contenteditable>
-var Meal = Backbone.Model.extend({
-  defaults: {
-    "appetizer":  "caesar salad",
-    "entree":     "ravioli",
-    "dessert":    "cheesecake"
-  }
-});
-var dinner = new Meal();
-dinner.on("change:entree", function(...){...});
-dinner.set("entree", "maccaroni");
-alert("Dessert will be " + dinner.get('dessert'));
-</code></pre>
-                    </section>
-                </section>
-                <section>
                     <h1>Entscheidungen!</h1>
                     <h2>Client-Side-MV* Ja/Nein?</h2>
                     <p>Je nach Anwendungsfall</p>
@@ -255,22 +207,6 @@ alert("Dessert will be " + dinner.get('dessert'));
                         </div>
                     </div>
                 </section>
-                <section>
-                    <h2>Backbone.js Playground</h2>
-                    <div class="quiddle quiddle-backbonejs">
-                        <div>
-                            <button class="quiddle-run">Run</button>
-                            <button class="quiddle-reset">Reset</button>
-                        </div>
-                        <div class="quiddle-inputs">
-                            <div class="quiddle-input" data-quiddle-file="quiddles/backboneplayground.html" data-quiddle-marker="body" data-quiddle-type="html" style="height: 20%"></div>
-                            <div class="quiddle-input" data-quiddle-file="quiddles/backboneplayground.js" data-quiddle-marker="script" data-quiddle-type="javascript" style="height: 80%"></div>
-                        </div>
-                        <div class="quiddle-outputs">
-                            <iframe class="quiddle-preview"></iframe>
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>
         <script src="lib/js/head.min.js"></script>
@@ -292,11 +228,7 @@ alert("Dessert will be " + dinner.get('dessert'));
                 var angularConfig = $.extend(true, {}, basicConfig(), {
                     template: 'quiddles/angular.html'
                 });
-                var backboneConfig = $.extend(true, {}, basicConfig(), {
-                    template: 'quiddles/backbone.html'
-                });
                 $('.quiddle-angularjs').quiddle(angularConfig);
-                $('.quiddle-backbonejs').quiddle(backboneConfig);
             });
         </script>
         <script src="js/reveal.min.js"></script>
