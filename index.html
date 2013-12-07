@@ -95,6 +95,9 @@
                             2009 | Google | OpenSource
                             <img src="img/github.png" alt="Github" />
                         </p>
+                        <aside class="notes">
+                            Angular=Eckig, Eckige Klammern von HTML Tags
+                        </aside>
                     </section>
                     <section>
                         <h2>"Angular is what HTML would have been had it been designed for applications."</h2>
@@ -117,6 +120,9 @@
                             <img src="img/binding_oneway.png" alt="Oneway Binding" />
                             <img src="img/binding_twoway.png" alt="Twoway Binding" />
                         </div>
+                        <aside class="notes">
+                            Oneway zb bei Backbones Underscore Templates.
+                        </aside>
                     </section>
                     <section>
                         <h2>HTML Erweiterungen: Directives</h2>
@@ -197,7 +203,8 @@ yo angular
 grunt serve
                     </code></pre>
                     <img src="img/yeomanworkflow.jpg" alt="Yeoman Workflow" />
-                    <p><a href="http://www.yeoman.io" target="_blank">Yeoman.io</a></p>
+                    <p><a href="http://www.yeoman.io" target="_blank">Yeoman.io</a>
+                    </p>
                 </section>
                 <section>
                     <h1>Entscheidungen!</h1>
@@ -290,6 +297,12 @@ grunt serve
                     src: 'lib/js/classList.js',
                     condition: function() {
                         return !document.body.classList;
+                    }
+                }, {
+                    src: 'plugin/notes/notes.js',
+                    async: true,
+                    condition: function() {
+                        return !!document.body.classList;
                     }
                 }, {
                     src: 'plugin/highlight/highlight.js',
