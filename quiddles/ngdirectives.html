@@ -7,8 +7,8 @@
         <span class="done-{{todo.done}}">{{todo.text}}</span>
       </li>
     </ul>
-    <span ng-if="remaining().length === 0">
-        <button ng-click="weghier()">Weg hier</button>
+    <span ng-if="remaining() === 0">
+        <button ng-click="feierabend()">Feierabend machen</button>
     </span>
     <img ng-src="{{successimg}}"
     style="width: 220px"/>

@@ -1,20 +1,17 @@
 angular.module('proseminar', [])
     .controller('MyDirectivesCtrl', function($scope){
-        $scope.customer = {
+        $scope.naomi = {
             name: 'Naomi',
-            address: '1600 Amphitheatre',
-            email: 'naomi@example.com'
+            address: '1600 Amphitheatre'
         };
     })
-    .directive('email', function() {
-        return {
-          template: 'Email: {{customer.email}}'
-        };
-    })
-    .directive('mykunde', function() {
+    .directive('kinfo', function() {
         return {
           restrict: 'E',
-          template: 'Name: <b>{{customer.name}}</b>' 
-            + 'Address: {{customer.address}}'
+          scope: {
+            kunde: '=' 
+          },
+          template: 'Name: <b>{{kunde.name}}</b><br />' 
+            + 'Adresse: {{kunde.address}}'
         };
     });

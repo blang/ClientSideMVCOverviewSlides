@@ -7,9 +7,9 @@ angular.module('proseminar', [])
         ];
         $scope.remaining = function(){
             return $scope.todolist.filter(
-              function(item){return !item.done});
+              function(item){return !item.done}).length;
         };
-        $scope.weghier = function(){
+        $scope.feierabend = function(){
             $scope.successimg = 'img/nothingtodo.gif';
         };
     });
